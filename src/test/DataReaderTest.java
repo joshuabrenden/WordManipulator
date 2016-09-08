@@ -25,5 +25,10 @@ public class DataReaderTest extends TestCase {
 	public void testGetDataFromFile() {
 		assertNotNull(DataReader.getDataFromFile(fullFilePath));
 	}
+	
+	@Test
+	public void testGetFileFromArgs(){
+		assertNotNull(DataReader.getFileFromArgs(new String[]{fullFilePath}));
+	}
 
 }
