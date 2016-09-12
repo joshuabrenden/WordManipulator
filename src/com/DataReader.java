@@ -38,7 +38,6 @@ public final class DataReader {
 			data = stringBuilder.toString();
 			
 		} catch (IOException e) {
-			
 			e.printStackTrace();
 		} finally {
 			closeQuietly(br);
