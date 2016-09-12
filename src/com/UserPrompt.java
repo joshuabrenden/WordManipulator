@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public final class UserPrompt {
 	
-	private UserPrompt() {
+	public UserPrompt() {
 		
 	}
 	

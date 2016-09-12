@@ -1,6 +1,7 @@
 package com;
 
 import java.util.HashSet;
+import java.util.List;
 
 public class WordManipulator {
 
@@ -14,8 +15,9 @@ public class WordManipulator {
 		String data = DataReader.getDataFromFile(filePath);
 		HashSet<String> uniqueWords = WordStatistics.getUniqueWords(data);
 		HashSet<String> palindromes = WordStatistics.getPalindromes(uniqueWords);
-		System.out.println(palindromes.size());
-		System.out.println(palindromes);
+		Double averageLetters = WordStatistics.getAverageLetterCount(uniqueWords);
+		List<String> reversedSentences = WordStatistics.getReversedSentences(data);
+		System.out.println(reversedSentences);
 	}
 
 }
