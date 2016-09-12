@@ -22,7 +22,8 @@ public final class DataReader {
 		return filePath;
 	}
 	
-	public static String getDataFromFile(String filePath){
+	public static String getDataFromFile(String[] args){
+		String filePath = getFileFromArgs(args);
 		String data = null;
 		BufferedReader br = null;
 		

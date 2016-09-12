@@ -11,10 +11,9 @@ public class WordManipulator {
 	}
 	
 	private void execute(String[] args){
-		String filePath = DataReader.getFileFromArgs(args);
-		String data = DataReader.getDataFromFile(filePath);
+		String data = DataReader.getDataFromFile(args);
 		HashSet<String> uniqueWords = WordStatistics.getUniqueWords(data);
-		HashSet<String> palindromes = WordStatistics.getPalindromes(uniqueWords);
+		List<String> palindromes = WordStatistics.getPalindromes(uniqueWords);
 		Double averageLetters = WordStatistics.getAverageLetterCount(uniqueWords);
 		List<String> reversedSentences = WordStatistics.getReversedSentences(data);
 		System.out.println(reversedSentences);

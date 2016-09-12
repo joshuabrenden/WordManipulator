@@ -12,23 +12,17 @@ import junit.framework.TestCase;
 
 public class DataReaderTest extends TestCase {
 	
-	private String fullFilePath;
+	private String[] fullFilePathArgs;
 	
 	@Override
     protected void setUp() throws Exception{
 		String relativeFilePath = new File("").getAbsolutePath();
 		String fileName = "/src/doc/input.txt";
-		fullFilePath = relativeFilePath + fileName;
+		fullFilePathArgs[0] = relativeFilePath + fileName;
     }
 	
 	@Test
 	public void testGetDataFromFile() {
-		assertNotNull(DataReader.getDataFromFile(fullFilePath));
+		assertNotNull(DataReader.getDataFromFile(fullFilePathArgs));
 	}
-	
-	@Test
-	public void testGetFileFromArgs(){
-		assertNotNull(DataReader.getFileFromArgs(new String[]{fullFilePath}));
-	}
-
 }

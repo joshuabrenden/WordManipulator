@@ -23,5 +23,9 @@ public final class UserPrompt {
 		return filePath;
 	}
 	
+	public static void sendFormattedResults(Results results ){
+		StringBuilder formattedResults = new StringBuilder();
+	}
+	
 	
 }
