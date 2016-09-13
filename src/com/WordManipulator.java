@@ -12,11 +12,14 @@ public class WordManipulator {
 	
 	private void execute(String[] args){
 		String data = DataReader.getDataFromFile(args);
+		
 		HashSet<String> uniqueWords = WordStatistics.getUniqueWords(data);
 		List<String> palindromes = WordStatistics.getPalindromes(uniqueWords);
 		Double averageLetters = WordStatistics.getAverageLetterCount(uniqueWords);
 		List<String> reversedSentences = WordStatistics.getReversedSentences(data);
-		System.out.println(reversedSentences);
+		
+		Results results = new Results(uniqueWords, palindromes, averageLetters, reversedSentences);
+		results.printFormattedResults();
 	}
 
 }

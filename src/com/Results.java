@@ -1,5 +1,8 @@
 package com;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.HashSet;
 import java.util.List;
 
@@ -15,21 +18,33 @@ public class Results {
 		this.averageLetters = averageLetters;
 		this.reversedSentences = reversedSentences;
 	}
-
-	public HashSet<String> getUniqueWords() {
-		return uniqueWords;
+	
+	public void printFormattedResults(){
+		 try {
+			FileWriter fileWriter = new FileWriter("output.txt");
+			BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
+			bufferedWriter.write(getFormattedResults());
+			bufferedWriter.close();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
-
-	public List<String> getPalindromes() {
-		return palindromes;
+	
+	private String getFormattedResults(){
+		return (new StringBuilder()
+		.append("There are ")
+		.append(uniqueWords.size())
+		.append(" unique words: ")
+		.append(uniqueWords)
+		.append(System.getProperty("line.separator"))
+		.append(palindromes.size())
+		.append(" of them are palindromes: ")
+		.append(palindromes)
+		.append(System.getProperty("line.separator"))
+		.append("The average number of letters per word is: ")
+		.append(averageLetters)
+		.append(System.getProperty("line.separator"))
+		.append("The sentences in reverse are: ")
+		.append(reversedSentences).toString());
 	}
-
-	public Double getAverageLetters() {
-		return averageLetters;
-	}
-
-	public List<String> getReversedSentences() {
-		return reversedSentences;
-	}
-
 }
